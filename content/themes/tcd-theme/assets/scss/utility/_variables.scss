@@ -1,0 +1,73 @@
+/**
+ * _variables.scss
+ */
+
+/*
+Typography
+ */
+/* Variables */
+$helvetica: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
+
+/* Definitions */
+$body-font: $helvetica;
+$heading-font: $helvetica;
+
+/* Sizes */
+$font-size--xs: 15px !default;
+$font-size--sm: 16px !default;
+$font-size--lg: 17px !default;
+
+/*
+Colors
+ */
+// brand color function
+@function brand-color($key: 'blue') {
+  @return map-get($brand-colors, $key);
+}
+
+/* Variables */
+$gray-dark: #404040;
+$gray-darker: #111;
+$gray-light: #D9D9D9;
+
+$brand-colors: (
+  'blue': #1B2139,
+  'yellow': #FFB218,
+  'green': #3D885F,
+  'sand': #DCDCD3,
+  'sand-dark': #60605B
+);
+
+/* Definitions */
+$footer-bg-color: brand-color('sand');
+$link-color: brand-color('yellow');
+
+$text-color: $gray-dark;
+$text-color--dark: $gray-darker;
+
+$button-color: brand-color('blue');
+$logo-bg-color: $button-color;
+$nav-bg-color: $link-color;
+
+$heading-color: brand-color('green');
+$footer-bottom-text: brand-color('sand-dark');
+
+$border-color: $gray-light;
+$border-color--light: #F3F3F3;
+
+// social colors
+$facebook: #415696;
+$twitter: #4FA6DD;
+
+/*
+Breakpoints
+ */
+$break-xs: 35rem !default;
+$break-sm: 48rem !default;
+$break-md: 62rem !default;
+$break-lg: 75rem !default;
+
+/*
+Margins
+ */
+$margin-p: 1.3rem;

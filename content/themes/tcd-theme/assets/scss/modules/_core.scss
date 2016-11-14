@@ -1,0 +1,78 @@
+/**
+ * _global.scss
+ */
+
+/*
+Elements
+ */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  @include font-smoothing(on);
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: $button-color;
+}
+
+a {
+  text-decoration: none;
+  @include link-color;
+  @include animate(color);
+
+  &:focus {
+    outline: thin dotted $border-color;
+  }
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+hr, ul, ol, dd, table {
+  margin-bottom: $margin-p;
+}
+
+/*
+Clearings
+ */
+.clear,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer {
+  @include clearfix;
+}
+
+/*
+Alignment
+ */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: $margin-p;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: $margin-p;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+Divider
+ */
+.site-content--divider {
+  margin: 0 auto;
+  width: 90%;
+  height: 1px;
+  background-color: $border-color;
+}

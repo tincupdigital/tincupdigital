@@ -1,0 +1,177 @@
+/**
+ * _vendor.scss
+ */
+
+/*
+Animate.css
+ */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInRight {
+  animation-name: fadeInRight;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+/*
+AnySlider
+ */
+.slider {
+  overflow: auto;
+  position: relative;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+/* Nav */
+.as-nav {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  li {
+    display: inline;
+  }
+  a {
+    display: inline-block;
+    padding: 2px;
+    margin: 0 0.25rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    text-indent: -9999px;
+    border: 3px solid rgba(white, 0.5);
+    border-radius: 50%;
+    @include animate(background-color, 0.25s);
+
+    &.as-active,
+    &:hover,
+    &:focus {
+      background-color: rgba(white, 0.5);
+    }
+    &:focus {
+      outline: 0;
+    }
+
+    @include break-md {
+      display: block;
+      margin: 0 0 0.375rem;
+    }
+  }
+}
+
+/*
+Ninja Forms
+ */
+.ninja-forms-required-items {
+  display: none;
+}
+.ninja-forms-form {
+  padding-top: 1rem;
+
+  input[type="text"],
+  textarea {
+    border: 1px solid $border-color;
+    border-radius: 2px;
+  }
+  input[type="submit"] {
+    @extend .btn, .btn-primary;
+  }
+
+  @include break-sm {
+    .half-width-wrap {
+      display: block;
+      float: left;
+      width: 49%;
+      margin-right: 2%;
+    }
+    .last-wrap {
+      margin-right: 0 !important;
+    }
+  }
+
+  .field-wrap {
+    margin-bottom: 1.414rem;
+  }
+}
+.ninja-forms-req-symbol {
+  display: none !important;
+}

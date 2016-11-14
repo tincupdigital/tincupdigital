@@ -1,0 +1,76 @@
+/**
+ * _sidebar.scss
+ */
+
+.widget-area {}
+
+/*
+Widgets
+ */
+.widget {
+  margin-bottom: $margin-p;
+
+  input[type="text"],
+  input[type="submit"],
+  button {
+    display: inline-block;
+    vertical-align: middle;
+    height: 34px;
+    border-radius: 2px;
+  }
+  input[type="text"] {
+    border: 1px solid $border-color;
+  }
+  input[type="submit"],
+  button {
+    line-height: 1.0;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style-position: inside;
+  }
+}
+
+/*
+Blog Widgets
+ */
+.blog-widget-area {
+  .widgettitle {
+    display: none;
+  }
+  select, input {
+    border-color: $border-color;
+    border-radius: 2px;
+    font-size: 0.882rem;
+    width: 150px;
+
+    @include break-sm {
+      width: 175px;
+    }
+  }
+  .searchform {
+    position: relative;
+  }
+  .searchform-field {
+    padding-top: 0.625rem;
+    padding-right: 1.75rem;
+
+    @include break-sm {
+      @include animate(width, 0.375s);
+
+      &:focus {
+        width: 225px;
+      }
+    }
+  }
+  .searchform-button {
+    position: absolute;
+    top: 50%; right: 0.5rem;
+    padding: 0;
+    line-height: 1.0;
+    background-color: transparent;
+    border: none;
+    margin-top: -0.425rem;
+  }
+}

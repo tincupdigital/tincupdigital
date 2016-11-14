@@ -1,0 +1,255 @@
+/**
+ * _header.scss
+ */
+
+.site-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 0.75rem 0;
+  background-color: $logo-bg-color;
+  z-index: 9999;
+
+  @include break-sm {
+    position: relative;
+    padding: 0;
+    background-color: $nav-bg-color;
+  }
+}
+.admin-bar {
+  .site-header {
+    position: absolute;
+
+    @include break-sm {
+      position: relative;
+    }
+  }
+}
+
+/*
+Navigation
+ */
+.main-navigation,
+.sub-navigation {
+  a {
+    font-weight: 700;
+  }
+
+  .main-nav--menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      position: relative;
+      align-self: flex-end;
+
+      &:nth-child(1) { order: 1; }
+      &:nth-child(2) { order: 2; }
+      &:nth-child(3) { order: 4; }
+      &:nth-child(4) { order: 5; }
+    }
+
+    // non-logo links
+    li:not(.site-logo) a {
+      padding: 1rem 0.75rem;
+      text-transform: uppercase;
+      color: $text-color;
+
+      &:hover,
+      &:focus {
+        color: white;
+      }
+
+      @include break-xs {
+        padding: 1rem;
+      }
+
+      @include break-sm {
+        padding: 1.25rem;
+      }
+      @include break-lg {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+
+    // accent arrow
+    @include break-sm {
+      li.current_page_item,
+      li.current_page_parent,
+      li.current-page-ancestor {
+        @include nav-accents;
+
+        a {
+          color: white !important;
+        }
+      }
+    }
+  }
+}
+
+.main-navigation {
+  .menu-toggle {
+    float: right;
+    @include button-accent(white, $link-color);
+  }
+
+  // hide logo menu li items on
+  // mobile, but show the logo
+  .main-nav--menu {
+    li {
+      display: none;
+    }
+    .site-logo {
+      display: inherit;
+    }
+  }
+
+  @include break-sm {
+    .main-nav--menu {
+      justify-content: center;
+
+      li {
+        display: inherit; // flex-item
+      }
+      .sub-menu {
+        display: none;
+      }
+    }
+  }
+}
+
+// hide sub menus in no logo menu
+// and in logo menu on large screens
+.sub-navigation {
+  position: relative;
+  background-color: $nav-bg-color;
+
+  .main-nav--menu {
+    justify-content: center;
+
+    a {
+      display: block;
+    }
+  }
+  .sub-menu {
+    display: none;
+  }
+}
+
+/* Logo */
+.site-logo {
+  display: inherit;
+  position: relative;
+  z-index: 4;
+  order: 3;
+
+  a {
+    display: block;
+    width: 100px;
+    height: 42px;
+    background-image: url('../img/logos/logo.svg');
+    text-indent: -9999px;
+  }
+  @include break-sm {
+    margin: -50px 0 -20px;
+
+    a {
+      width: 200px;
+      height: 150px;
+      background-image: url('../img/logos/logo-large.svg');
+    }
+  }
+  @include break-lg {
+    margin: -65px 0 -30px;
+
+    a {
+      width: 250px;
+      height: 188px;
+    }
+  }
+}
+
+/*
+Mobile Menu
+ */
+.mobile-menu {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.375s ease;
+  overflow: hidden;
+  background: $link-color;
+  background: linear-gradient(135deg, $link-color, lighten($link-color, 5%));
+
+  .main-nav--menu {
+    float: right;
+    width: 70%;
+    padding: 0 1.5rem 1.25rem;
+    position: relative;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul ul {
+    margin-left: 1.5rem;
+  }
+  li {
+    margin: 1.25rem 0 0;
+
+    &.current_page_item > a {
+      border-bottom: 1px dotted white;
+    }
+
+    // don't display logo
+    &.site-logo {
+      display: none;
+    }
+  }
+  a {
+    font-size: 1.143rem;
+    padding: 0.125rem;
+    @include link-color(white, $button-color);
+  }
+
+  @include break-sm {
+    display: none;
+  }
+}
+.site {
+  position: relative;
+  @include animate(transform, 0.375s);
+
+  &.pushed {
+    transform: translateX(-70%);
+  }
+}
+
+/*
+Home Page
+ */
+.home {
+  .site-header {
+    left: -9999px;
+    opacity: 0;
+    @include animate(opacity, 0.325s);
+
+    &.visible {
+      left: 0;
+      opacity: 1;
+    }
+
+    @include break-sm {
+      display: none !important;
+    }
+  }
+  .sub-navigation.hidden {
+    display: none;
+  }
+}
