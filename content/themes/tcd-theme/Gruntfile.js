@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var jsFileList = [
-    'assets/js/concat/*.js',
+    'assets/js/concat/**/*.js',
     'assets/js/_*.js'
   ];
 
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'assets/js/*.js',
-        '!assets/js/scripts.js',
+        '!assets/js/main.js',
         '!assets/**/*.min.*'
       ]
     },
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
           sourceMap: false
         },
         files: {
-          'assets/css/style.css': 'assets/scss/style.scss'
+          'assets/css/main.css': 'assets/scss/main.scss'
         }
       },
       build: {
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
           sourceMap: true
         },
         files: {
-          'assets/css/style.min.css': 'assets/scss/style.scss'
+          'assets/css/main.min.css': 'assets/scss/main.scss'
         }
       }
     },
@@ -49,13 +49,13 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [jsFileList],
-        dest: 'assets/js/scripts.js',
+        dest: 'assets/js/main.js',
       },
     },
     uglify: {
       dist: {
         files: {
-          'assets/js/scripts.min.js': [jsFileList]
+          'assets/js/main.min.js': [jsFileList]
         }
       }
     },
@@ -64,10 +64,10 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions', 'ie >=8', 'android 2.3', 'android 4', 'opera 12']
       },
       dev: {
-        src: 'assets/css/style.css'
+        src: 'assets/css/main.css'
       },
       build: {
-        src: 'assets/css/style.min.css'
+        src: 'assets/css/main.min.css'
       }
     },
     watch: {
@@ -91,8 +91,8 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'assets/css/style.css',
-          'assets/js/scripts.js',
+          'assets/css/main.css',
+          'assets/js/main.js',
           'page-templates/*.php',
           'templates/**/*.php',
           '*.php'

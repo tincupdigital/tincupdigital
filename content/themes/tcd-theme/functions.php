@@ -33,14 +33,19 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * CPT Class
+ * Soil setup
  */
-require get_template_directory() . '/inc/plugins/cpt-setup.php';
+require get_template_directory() . '/inc/plugins/soil-setup.php';
 
 /**
  * TGM Plugin Activation
  */
 require get_template_directory() . '/inc/plugins/tgm-setup.php';
+
+/**
+ * CPT Class
+ */
+require get_template_directory() . '/inc/plugins/cpt-setup.php';
 
 /**
  * Advanced Custom Fields

@@ -5,11 +5,6 @@
  * @package _s
  */
 
-/**
- * Load the CPT class
- */
-include_once get_template_directory() . '/inc/vendor/wp-custom-post-type-class/src/CPT.php';
-
 // Dashicons for 'menu_icon' value can be found here:
 // https://developer.wordpress.org/resource/dashicons
 

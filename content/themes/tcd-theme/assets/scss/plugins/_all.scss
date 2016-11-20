@@ -3,11 +3,6 @@
  */
 
 /*
-Colors
- */
-@import "colors/colors";
-
-/*
 Normalize
  */
 @import "normalize/normalize";
@@ -18,14 +13,19 @@ Type
 @import "type/type";
 
 /*
-Fluidity
+Colors
  */
-@import "fluidity/fluidity";
+@import "colors/colors";
 
 /*
 Basscss
  */
 @import "basscss/basscss";
+
+/*
+Fluidity
+ */
+@import "fluidity/fluidity";
 
 /*
 Vendor

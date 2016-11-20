@@ -16,7 +16,7 @@ define( 'DB_HOST', 'localhost' );
  */
 // add subfolder before /content if site is not located in domain root
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/tincupdigital/content' );
+define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/starter/content' );
 
 /**
  * Database table prefix

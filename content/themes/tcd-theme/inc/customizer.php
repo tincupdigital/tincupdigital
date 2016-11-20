@@ -64,14 +64,6 @@ function _s_customizer_add_sections( $wp_customize ) {
     'panel' => 'site_setup',
     'priority' => 3
   ) );
-
-  /* Miscellaneous */
-  $wp_customize->add_section( 'miscellaneous', array(
-    'title' => __( 'Miscellaneous', '_s' ),
-    'description' => __( 'Miscellaneous items can be configured here.', '_s' ),
-    'panel' => 'site_setup',
-    'priority' => 4
-  ) );
 }
 add_action( 'customize_register', '_s_customizer_add_sections' );
 
@@ -143,15 +135,6 @@ function _s_customizer_add_fields( $wp_customize ) {
     'description' => __( 'Add a link to your Twitter page.', '_s' ),
     'section' => 'social_media',
     'type' => 'url'
-  ) );
-
-  /* Miscellaneous */
-  $wp_customize->add_setting( 'analytics_id' );
-  $wp_customize->add_control( 'analytics_id', array(
-    'label' => __( 'Analytics ID', '_s' ),
-    'description' => __( 'Add your Google Analytics ID here to enable page tracking (e.g. UA-000000-01).', '_s' ),
-    'section' => 'miscellaneous',
-    'type' => 'text'
   ) );
 }
 add_action( 'customize_register', '_s_customizer_add_fields' );
