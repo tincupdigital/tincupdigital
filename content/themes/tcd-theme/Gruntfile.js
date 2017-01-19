@@ -73,30 +73,32 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/scss/**/**/*.scss'
+          'assets/scss/**/*.scss'
         ],
-        tasks: ['sass:dev']
+        tasks: ['sass:dev'],
+        options: {
+          livereload: true
+        }
       },
       js: {
         files: [
           jsFileList,
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'concat']
-      },
-      livereload: {
-        // Browser live reloading
-        // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
+        tasks: ['jshint', 'concat'],
         options: {
           livereload: true
-        },
+        }
+      },
+      php: {
         files: [
-          'assets/css/main.css',
-          'assets/js/main.js',
           'page-templates/*.php',
           'templates/**/*.php',
           '*.php'
-        ]
+        ],
+        options: {
+          livereload: true
+        }
       }
     },
     svgmin: {
